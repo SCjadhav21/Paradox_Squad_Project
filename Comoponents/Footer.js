@@ -19,7 +19,7 @@ import { Image } from '@chakra-ui/react'
 
 const ListHeader = ({ children }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Text fontWeight={'500'} fontSize="25px" mb={2} color="#E23D53">
       {children}
     </Text>
   );
@@ -55,19 +55,20 @@ const SocialButton = ({
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'4xl'} py={10}>
+    
+      bgColor={useColorModeValue('black.50', 'black.900')}
+      color={useColorModeValue('white.700', 'white.200')}>
+      <Container as={Stack} maxW="100%" py={10}  bgColor={"black"} color="white" overflowX="hidden" fontWeight={"600px"} fontSize={"20px"}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={2}>
-          <Stack align={'flex-left'}>
-            <ListHeader>academy</ListHeader>
+          <Stack align={'flex-start'}>
+            <ListHeader>Academy</ListHeader>
             <Link href={'#'}>About Us</Link>
             <Link href={'#'}>Blog</Link>
             <Link href={'#'}>Careers</Link>
             <Link href={'#'}>Contact Us</Link>
           </Stack>
 
-          <Stack align={'flex-left'}>
+          <Stack align={'flex-start'}>
             <ListHeader>POPULAR GOALS</ListHeader>
             <Link href={'#'}>Banking & Insurance</Link>
             <Link href={'#'}>SSC</Link>
@@ -77,18 +78,18 @@ export default function Footer() {
             <Link href={'#'}>UPSC</Link>
           </Stack>
 
-          <Stack align={'flex-left'}>
+          <Stack align={'flex-start'}>
             <ListHeader>PRODUCTS</ListHeader>
             <Link href={'#'}>Mock Tests</Link>
             <Link href={'#'}>Video Courses</Link>
             <Link href={'#'}>Video Courses</Link>
             <Link href={'#'}>Books</Link>
-            <Link href={'#'}>one to one doubt solution</Link>
+            <Link href={'#'}>One To One Doubt Solving</Link>
           </Stack>
 
-          <Stack align={'flex-right'}>
+          <Stack align={'flex-right'} margin="10px">
             <ListHeader>Install App</ListHeader>
-            <Box boxSize='sm'>
+            <Box boxSize='sm' >
   <Image src='https://st.adda247.com/https://adda247.com/images/google-play-store.svg' alt='Dan Abramov' />
   <Image src='https://st.adda247.com/https://adda247.com/images/apple-app-store.svg' alt='Dan Abramov' />
 </Box>
