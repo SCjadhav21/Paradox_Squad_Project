@@ -5,7 +5,7 @@ import Link from "next/link";
 const Navbar = () => {
   return(
     <nav className={styles.ulcss}> 
-    <ul> <li><Link href=""><Image src="/logo.jpg" width={120} height={30} /></Link></li>
+    <ul> <li><Link href=""><Image src="/logo.jpg" width={100} height={10} /></Link></li>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/about">About</Link></li>
         <li><Link href="/category">Category</Link></li>

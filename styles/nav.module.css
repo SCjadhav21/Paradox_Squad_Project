@@ -2,6 +2,7 @@
 .ulcss{
     position: sticky;
     top: 0;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 700px){
