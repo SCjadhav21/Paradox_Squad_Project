@@ -60,7 +60,6 @@ export default function Home({ data }) {
             className="banner"
           >
             <Img
-              border="2px solid red"
               borderRadius="20px"
               borderBottomRadius="20%"
               // border="1px solid black"
