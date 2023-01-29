@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 
 import { Box, Heading, Image, Text, Button, Center } from "@chakra-ui/react";
+import Link from "next/link";
 
 const video = ({ video }) => {
   console.log(video, video.src);

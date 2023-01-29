@@ -51,20 +51,23 @@ export default function Home() {
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGVhcm5pbmd8ZW58MHx8MHx8&w=1000&q=80",
     "https://th.bing.com/th/id/R.f08d1853e545ebe248d445f2ad870c48?rik=5cMegG1utA2%2fDw&riu=http%3a%2f%2fwww.quotemaster.org%2fimages%2fac%2faca89ddc63eff6c53c19c2a951d8abe6.jpg&ehk=Jj02OuXINN%2fVTrEvSrKVKCSbddtSF6kOIYntcmNl%2fm8%3d&risl=&pid=ImgRaw&r=0",
   ];
-  let a = -1;
-  let id = setInterval(() => {
-    if (a === 7) {
-      a = 0;
-    } else {
-      a = a + 1;
-    }
 
-    setData0(datasroll[a]);
-  }, 3000);
-  // useEffect(() => {
-  //   clearInterval(id)
-  //   setInterval();
-  // }, [change]);
+  const runSlider = () => {
+    let a = -1;
+    let id = setInterval(() => {
+      if (a === 7) {
+        a = 0;
+      } else {
+        a = a + 1;
+      }
+
+      setData0(datasroll[a]);
+    }, 3000);
+  };
+  useEffect(() => {
+    runSlider();
+  }, [change]);
+
   return (
     <>
       <Head>
