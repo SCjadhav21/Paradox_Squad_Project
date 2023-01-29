@@ -39,7 +39,7 @@ const video = ({ video }) => {
   );
 };
 export async function getStaticPaths() {
-  let responce = await fetch("http://localhost:4500/banking");
+  let responce = await fetch("https://dull-puce-quail-veil.cyclic.app/upsc");
   let data = await responce.json();
   return {
     paths: data.map((el) => ({
@@ -53,7 +53,9 @@ export async function getStaticProps(context) {
   const {
     params: { id },
   } = context;
-  let responce = await fetch(`http://localhost:4500/banking/${id}`);
+  let responce = await fetch(
+    `https://dull-puce-quail-veil.cyclic.app/upsc/${id}`
+  );
   let data = await responce.json();
 
   return {
