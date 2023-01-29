@@ -60,7 +60,6 @@ export default function Home({ data }) {
             className="banner"
           >
             <Img
-              border="2px solid red"
               borderRadius="20px"
               borderBottomRadius="20%"
               // border="1px solid black"
@@ -82,7 +81,6 @@ export default function Home({ data }) {
                     alignItems="center"
                     boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                     key={index}
-                    className="imgs"
                   >
                     <Img
                       w="100%"
@@ -106,13 +104,257 @@ export default function Home({ data }) {
             </SimpleGrid>
           </Box>
           <Box p="20px" pb="auto">
-            <SimpleGrid columns={[1, 2, 3]} gap={7}>
+            <SimpleGrid columns={[1, 1, 2]} gap={7}>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+                // boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    h="100px"
+                    w="100px"
+                    p="8px"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADjCAMAAADdXVr2AAAA51BMVEX/pQD39/f///+cZQD/owD/oAD3+///nwD/qACUYACaYQD3+fv3+v6bYwCXWwCWWQDdjwD0ngD48uj8xXv47Nr9wGv39O747d/8wnT70Zz4+PX62rP7zZH46NL+sTr61qj55Mnw7ObHsJP/qh/9vGH63rv9tUr8yIP70Jn+qRr9t1L2rT+tiVeidTLVyLb3qCi8oHzk3NHWxrGcahWlez6rhVDe08Owj2HvlQD9tU7y27zxvHP1uGHz1rLxw4bxyZTZhgDEtJ64mnOebiK8mm7Hro/p5Nrgw522hD6qawCidDCug0a1jVYeWKQNAAAOTUlEQVR4nO3da1vbuBIA4NiWZI4d20sIDgkhCYUQyh1SaJd2Ly2FPVv4/7/nyM7Fji3b0mjM5TzMt3b3IbwdaXS10zD+r6Px0r9AvfHOe8vxznvL8c57y/HO0w+XR3Ml+F88xwfXzItUjPVandH2YX9jGd3D0agTuow161bWxuMy1uuMuxsHe4RGQZKI/miTxmB/MtzhymZ9xlp4XGa0h5NBw45VDXHEUJvs7fdHYV15ROe5LnN3uvtcVujKKSkdbIzDOrKIy+NpC7c35WkpIyf2dxhDFmLyXNbqHlBlWkK01zZGuDlE47msNzzgaYPREmFjssOaWL8UFq/JRptU07YUnndDrEaKwYsSd25j2OZCSjd3cID6PN7jJgQlcWmhfTzGGCp0eS7rbGHb5sDzbVe7E+rxOG4TsVVmgPTjtm4T1eKxVj2ZS4B7Yz2gBq9pTGrFxUB7oFVkwDyXbTdozbgZcL/Fnp3H2oPaU7cA0kNwEYXxXHdSW0URBD3fASYQxGOjj8/RLpMg9oYBSiCA98ypmwXdAyVQncfa58+bulkQ2geUUGUeGz5XSckGPQ6VZzGKPNfYt18G14gWEyPVBqrGa3Y+vlDqZj67r+hT4rHxSzXMRdAjtQqqwmP9l2uYiyB7LRWfPM9tbr5ExcwGaewoFBhpnmv8/hp00Qgxlu+Asjw3HLxwt1sGoUNpnyTPDV+0ZGbC7sr65Hhu6zXpuO9Q0ifFc1vQrdm6wp7I+WR4bth4ZTrp/Enw3HDv1elk+181zzVeo477ZOqnBO/VjAiZkBn/Knls/3WM5oKg1fOXKh7bQNHNTpxtm1B7dhCN80Mr558VPDbUn0Vz2Prga/e23WmFvbDVad92vx6vY5wnkT297LkjXR2hZH/YZmYuOsNv+gcv5Kii+5Xy3FCvFfG8fRsJaIvY+aorpBXr21JeU6toEjr4o1dsi8MYH+vtutnj0vJSxtMqK8Q+HlXY5ik80gFWlJcSXnOs0fHoYEcKFwN1VpJkAOPpzKMJGUrjovhDo4+Xdr9iHvsd/JH0W6ikM83eV3hLsXeK81fIY0NoiyH2H4q4KG7BNZR8VOe5Leg/JzlvAXSmGR6DfVuFzbOIx6AfRvdBuCi+QtuLPSrKXwGvCW2a9CtYZ5p/AltMcfMs4IXA3Nl/auhMEzrDLayeYh7bgvHoX1o6PkIAfXbB4C7kuTuwT9FqmbP4C9YpyL44fUIeg801yTdtHbi+FFQXEc+FzcbIMYLONL/B/mnPhekT8mB7tkR1qiIO97c1yKfTbdHSQcADDgr2LYrONC//hvjEg4Moe6BNW6o3JKTjO8hHh4L05XnNLiR5ZA9NZ5qfIO2TCDOV+xsXlDxbbu0qFw8BxCdKX44H63koY0ISFz7AJ+p9OR4DlU0bp2ouwnD+A/DR7Zwvy3PHoOTpT1dW44MP8AnGviwPNmGxYUu84jACC+DLT10yPLcNmbCQLWSdad77AF9+5pnhsQ1Q8jrovNC3AD47dEt5Bqjn4Uw2V+PEAfjoYbOM525DeFRt108uznj6lH3kIyvjsQPQfAx3VJiH5wF82eKywoNtjxH45lFZ/OCtU9mX3TRb4TUPQcmro23OW6e6r6RxsvNXUjej2J3xFH107Bbx3A5olb5ei840Tz2Aj2yyIh5wKYQ7m07iwrHUfaRRmD3YzjTR3fwrinnnU/TRldqZ4rkt0CYEHdfEu1zyVHxk0izggcb0uiqLafYSnoJvddmQ4rFN0AYZrTo/B4flQXy044p5oIUsOa9LZ35yLIBvZVGb8NwOqG2SQW2861T25H0rE5cUD9b1auQ9pbMn7SN7Qh7wVIj8Xhvv8ypP1kdTp0UpHuzaZm2jempcV/Ol52VLnhtCj55q4/3I8uR86ZEv4Y2AvDqW6rM4yfGkfOl7dEsebMJZb+XM8+TyJ2ic0PPmGse9RwFPxpeqLQkPevtvveRGo16cegKehC81q076HvTSTD07LVE4Ql61j3abWR5wzhL9MPmrf2qx6wt11T6ykecBC2dtWy2meVPEq/KlSueSB5uSNWo4PlnEB1FlkfGldjsXPNgmWfzDDmriZedkCr5caWkCx4VGbQs+o6CySPiSkWHBY/twHtaViNUo7nqVPtrO8eCX3mvqfLkJtbyP3uZ4Oo9X1sKblrXNcl+yYF/wQp1b75i3IhZxGVToSnyk38zwejp37etY8gmWC9K+HA926LyIGuZlu9XJK/YlO/EovBo2qu/L62a5D5nHV1jIul5QVVjKfNg89Hln1ahQ7kPPHvIhmFzPK/Sh85DTVzbdlPCh83AnnjcKyRP58HmoMzNLsq4U+fB5mOdg8nWlwFcDD2+/U7FpCnx5HuxkNh3aT6DMo6fYMgW+ZJ96OaXWf/qe4tx6lJlsVvjyU2pDW4fUPL8DmmbWl9yqXq731vRfAoDRPCXWQdW+/HqPHSG8xoFqV88erGVmfHQnx4PdG1gN/eOUTzq8pS+5PbDcKZtgvIRDt3leyC2Dqnw0NLI88IPOK6E3uJ/BO96Kj+R3qUEX/HOhdRy264OGvJyPDPK8Ns5LdXSelLrT6niJL3UrcDnuIYzrcdhtqE5pFVTma/RzJ0QoA18U4OYJHs9zvr+3BaezGANfFMDm+YCls6zgMs/DGRmisEHnmSgdLw7PX44LqcNn8AFfNkDNU3fES/OmpoAHPn3OBWDjBbFpWs5P0aUrA+9lcuq71qdoTdOy/A/CO2VYtQWw8XKF1zRXKkuK1+zjpU/1eT5EnOU5PUPAg9+NyIfimdF3zOR5j6aIB36JiSjU5i6IOF5Z7gvuUoMe/xKH0vOYkK2x4ghuxDz43Q9BqDwKjTTZnMVK11t5jgH4lhZhKBz59RDWQUk4T6aYB3zfQAHvo3zbxCwsln9V8JAN+EqnMORnnpIHsZIR7BoFPKQV+yxIX5YnunQLDue08Akwo4eYPfmJNSIuMyxkn77E2A1chOyuUvndMdUIHoxCnnuL2Dqp5JsCC2+lQsI7LXnyGbd2Sq7aHzB5/vcyHkNbskd3Yitl4eXVxSdEHG+boVHC0z/FTEXZyNd7uLo/mTqB72CWTcv5bJbxdO495oKIbxPs3nz4fOr7HOZZDq5udb4p4OHtuAjW7L24LQY8ZR4PLvROfnxCLSxWJnn5lwkhbkkkI0PcFi0/iFNmcVngXN+f7Ub/6QzRl96GEPPw9gPnDzhEbfFXsIA5XGZd39/sJjlVvwdRFF7QMyp4CHcIFkH+ubo4tQLey+Jx2+HJs04+nO1mmuwlWvqci8pXQWHOXL7MYZ7DS+T0ZCVnSeC1zsyMRchD3O9cW5+1xul1gSwOvQPZVDg/s4VF9JY5jSv/ufhiXX8okfF4+IyXvMtc2xS9RA9taCcHpWu+kBedOx+tsDgn+eSJ3vCIlT5yXvhkX1RO74LAwVwsBA+CN1gKeMDXtuR5wqOGKGeWH5fTqF+i7bOIep74/ZxImxK5h2+inHlRzuJaGli8ll6eTXFap+fvCiTil8e2cL6J5duK7GQaDYFWnLPpSVJx7lDy51yIklfwZuM+yuBA/1nkzJrPoKOR/TozsuMcnzi5CUsxzzBwvrCN/vfH52ks8yKZeGRH2aNe3f6r4gFf3ZwL8m8s8/2SkR3j/MT7JWyahdnDOuwj/0bzzLKRfRdjcBAOCiU86BskVoMO+relc5bwBuVM3RfXlWIeyh0zul0im9XSACN3nlWAKPuyEO3jsMJDsHBRS/VlceS2ICR4+gs/0UZnPErEIzte+D+KmmbZN9k0db/dLHP/I26Nvo83h56Hd1dIKP2aJd2pdXLKEOVs6uPOoJe6wqpZwTN6moM7OX7ohbOcpVtjPMaj5TDIbR/J8vRXfl/8lY3a+RD/eHF1afzCyaRwlSfH0/9ywbX1BcKJYNY1h813Pyuf25bTTcVzTSmewXS/pHvuW4HNQvUpL2GUd7xKnv6mfOTzrPx2fIiyTigZ8aR4+l8YHG+XGTmextMmKd19acer5kX7gvq+4DLHK3kZi3T4wv0HJZ7R1P52z7V15z7HQyiczmOlrppnMO21H+9/WR3C9VTntPJXl+EZrKvt+5JNH/AhvbTuLvt6eyAPxXezorvSTp43ldFJ8Qw20d6b+HKW0uk/K+R5uzI6OZ7B+vq+H4t1u3GhrXMkdZI8jPa57l9fXT5cnv10tEd0R65lyvNQfPGmu6+/KpKrKkq8aHzQH99Rwn80ZHXyPIONEOYvGLrP0r+yCs9odhDmn7rhVc8zgTw+vz7GWR/p6K5UdEo8w2VbaOtbUDie4IAZjRev3/UaqFb79E+lSyaMZ7C25v6Shi8o3GtH4/GavKnXQKE+x7tR1qnzeAK3Nb4dHerzgifVhgnkGc3WkVYCAT7HV6uYOjxeQfUSqOwLniSn0Cg8nsBwX6eEqvkcC5Y6OI8ncLSnMcYr+JzgogdLnQaPA92uRguV9XnB4wM0dVq8qIVO4C1UyucFdzcmOHWaPD5GtLbAwGqf50+vtHC6PN4FO1vQdVKFzwnurlw9nDYvArY2CExY5nOCU93MofAiYHi4BgIW+pzgSa/PLQKBx4FNd3xEAXVU6HN8634XBYfEM+JO2F+zlYU5n+cHT2fyeylVgcWLUsh2NoiqMO2Lztwfr0KkxMWBxzNi4WiyZys104UvOnZ/usJqlItA5RmxsDPcbygQ19Y9h6ft18VND9lm4POMaLbGjPZwc49SbqxA8v+B0vXHixueNnSbUQsvCp5ENxx1twYNOlOuOOM/c5dN9vb72+1ePbQoauJF4XIj67VG48PJ1sH5GqHLWGscHG31h7edkLFmbbQoauTNwuVKznR7YWsZRo/Frjphs6idl4S7jOf7zGfkvUS8895yvPPecrzz3nK8895y/A8kKKhem7oiIQAAAABJRU5ErkJggg=="
+                  ></Img>
+                </Box>
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    Shareable Knowledge
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    Earn a Knowledge basis on lectures
+                  </Text>
+                </Box>
+              </Box>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    p="8px"
+                    h="100px"
+                    w="100px"
+                    src="https://cdn-icons-png.flaticon.com/512/4762/4762311.png"
+                  ></Img>
+                </Box>
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    100% online lectures{" "}
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    Start instantly and learn at your own schedule.{" "}
+                  </Text>
+                </Box>
+              </Box>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    p="8px"
+                    h="100px"
+                    w="100px"
+                    src="https://www.pngfind.com/pngs/m/202-2022004_flexible-schedule-icon-v1-flexible-schedule-icon-hd.png"
+                  ></Img>
+                </Box>
+
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    Flexible Schedule
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    Set and maintain flexible deadlines.
+                  </Text>
+                </Box>
+              </Box>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    p="8px"
+                    h="100px"
+                    w="100px"
+                    src="https://cdn.iconscout.com/icon/premium/png-256-thumb/beginners-3255164-2729517.png"
+                  ></Img>
+                </Box>
+
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    Beginner Level
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    It is very easy to use and learn
+                  </Text>
+                </Box>
+              </Box>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    p="8px"
+                    h="100px"
+                    w="100px"
+                    src="https://e7.pngegg.com/pngimages/685/234/png-clipart-english-grammar-language-proficiency-english-miscellaneous-blue-thumbnail.png"
+                  ></Img>
+                </Box>
+
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    English
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    Subtitles: English, Arabic, French, (European)
+                  </Text>
+                </Box>
+              </Box>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                display="flex"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+              >
+                <Box>
+                  {" "}
+                  <Img
+                    p="8px"
+                    h="100px"
+                    w="100px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdUWGsJV28h1Ubl_o18ayhQf2zp422tTt1Q&usqp=CAU"
+                  ></Img>
+                </Box>
+
+                <Box>
+                  <Text
+                    align="center"
+                    fontSize="24px"
+                    fontWeight="500"
+                    // p="7px"
+                    pb="8px"
+                    color="#373A3C"
+                  >
+                    100% free Education
+                  </Text>
+                  <Text
+                    align="center"
+                    fontSize="16px"
+                    // lineHeight={9}
+                    color="#818181"
+                    // p="0px 5px"
+                    pb="5px"
+                  >
+                    No cost education totaly free.
+                  </Text>
+                </Box>
+              </Box>
+
+              {/* </Box> */}
+            </SimpleGrid>
+          </Box>
+          <Box p="20px" pb="auto">
+            <SimpleGrid columns={[1, 2, 2, 3]} gap={7}>
               <Box
                 h="full"
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   h="200px"
@@ -147,7 +389,6 @@ export default function Home({ data }) {
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   h="200px"
@@ -182,7 +423,6 @@ export default function Home({ data }) {
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   w="100%"
@@ -217,7 +457,6 @@ export default function Home({ data }) {
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   w="100%"
@@ -254,7 +493,6 @@ export default function Home({ data }) {
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   w="100%"
@@ -290,7 +528,6 @@ export default function Home({ data }) {
                 borderRadius="20px"
                 alignItems="center"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                className="imgs"
               >
                 <Img
                   w="100%"
@@ -324,6 +561,58 @@ export default function Home({ data }) {
 
               {/* </Box> */}
             </SimpleGrid>
+          </Box>
+          <Box p="20px">
+            <Text fontSize={30}>About Lectures:</Text>
+            <Text fontSize={20} lineHeight={7} color="#818181">
+              There are certain advantages to online lecturing. Students may
+              access online lectures posted on their designated websites
+              anywhere in the world, at any time they wish, as long as they have
+              an internet connection. They can also be repeated for the sake of
+              note taking. Studies have shown that students improve
+              significantly in courses with online archived lectures,[1]
+              especially international students.[2] Studies have also noted that
+              students' overall experience of a course has improved with the
+              addition of online lectures.[1] Online lecture may also one of the
+              solutions in equalizing education for students. There are also
+              disadvantages to online lecturing, namely the lack of face-to-face
+              interaction, and the fact that students cannot easily contact
+              their instructors unless a communications link is created.
+              Additionally, attendance for in-class lectures may drop due to
+              recorded lectures.
+            </Text>
+          </Box>
+          <Box p="20px">
+            <Text fontSize={30}>About Lectures Categories:</Text>
+            <Text fontSize={20} lineHeight={7} color="#818181">
+              • Formal lecture. The lecturer delivers a well-organized, tightly
+              constructed, and highly polished presentation. This type of
+              lecture works well for teaching large groups of students and has
+              been popularized by outlets such as TED Talks (Donovan, 2013) and,
+              more recently, massive open online courses (MOOCs), such as those
+              offered through Coursera or EdX. In the formal lecture, students
+              hold questions until the conclusion of the lecture. • Socratic
+              lecture. This type of lecture, which typically follows a reading
+              assignment to give students a baseline of knowledge, is structured
+              around a series of carefully sequenced questions. The instructor
+              asks a single student a question sequence. The questions require
+              the student to use logic and inference skills. • Semi-formal
+              lecture. This is the most common type of lecture. Somewhat similar
+              to the formal lecture, the semiformal lecture is less elaborate in
+              form and production. Occasionally, the lecturer entertains student
+              questions during the presentation of material. •
+              Lecture-discussion. This type of lecture encourages greater
+              student participation. The instructor presents the talk, but he or
+              she stops frequently to ask students questions or to request that
+              students read their prepared materials. The direction of
+              interaction can occur in one of three ways: (1) instructor to
+              class, (2) instructor to individual student, or (3) individual
+              student to instructor. • Interactive lecture. In this version of
+              lecturing, the instructor uses mini-lectures about 20 minutes
+              long, and involves students in a range of brief content-related
+              activities in between. Interaction may occur between instructor
+              and students or between and among students.
+            </Text>
           </Box>
         </Box>
       </main>

@@ -61,7 +61,7 @@ import axios from 'axios';
               },
             })
               .then((res) => {
-                if (res.data.msg === "user Registered") {
+                if (res) {
                   toast({
                     title: "Account created.",
                     description: "We've created your account for you.",
@@ -69,7 +69,7 @@ import axios from 'axios';
                     duration: 3000,
                     isClosable: true,
                   });
-                  setNavigate(true);
+                 
                 } else {
                   toast({
                     title: "Acount has been Already Regestered.",
@@ -82,9 +82,9 @@ import axios from 'axios';
                 }
               })
               .catch((err) => {
-                let message = err.message;
+               
                 toast({
-                  title: { message },
+                  
                   description: err.description,
                   status: "error",
                   duration: 3000,

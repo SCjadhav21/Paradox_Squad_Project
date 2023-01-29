@@ -44,16 +44,18 @@ import axios from 'axios';
             },
           })
             .then((res) => {
-              if (res.data.msg === "Login Successfull") {
+              if (res) {
                 toast({
-                  title: "Login Successfull",
-                  description: "You've Logged In your account.",
-                  status: "success",
-                  duration: 3000,
-                  isClosable: true,
-                });
+                    title: "Login Successfull",
+                    description: "You've Logged In your account.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                  });
+                
                 localStorage.setItem("token", res.data.token);
-                setNavigate(true);
+                
+                
               } else {
                 toast({
                   title: "Wrong Credentials",
@@ -85,8 +87,9 @@ import axios from 'axios';
         }
       };
 
+     
+
       
-    
     return (
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
