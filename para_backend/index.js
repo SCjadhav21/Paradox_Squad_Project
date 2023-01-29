@@ -8,9 +8,11 @@ const { ndaRouter } = require("./routes/ndaRoutes");
 const { neetRouter } = require("./routes/neetRoutes");
 const { upscRouter } = require("./routes/upscRoutes");
 const { sscRouter } = require("./routes/sscRoutes");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("WELCOME");

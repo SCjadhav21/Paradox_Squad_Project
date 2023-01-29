@@ -117,8 +117,8 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  let responce = await fetch(`https://dull-puce-quail-veil.cyclic.app/iit`);
+export async function getServerSideProps() {
+  let responce = await fetch(`https://vast-cow-kilt.cyclic.app/iit`);
   let data = await responce.json();
 
   return {

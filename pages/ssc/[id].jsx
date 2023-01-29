@@ -40,24 +40,22 @@ const video = ({ video }) => {
     </>
   );
 };
-export async function getStaticPaths() {
-  let responce = await fetch("https://dull-puce-quail-veil.cyclic.app/ssc");
-  let data = await responce.json();
-  return {
-    paths: data.map((el) => ({
-      params: { id: el._id.toString() },
-    })),
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   let responce = await fetch("https://dull-puce-quail-veil.cyclic.app/ssc");
+//   let data = await responce.json();
+//   return {
+//     paths: data.map((el) => ({
+//       params: { id: el._id.toString() },
+//     })),
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const {
     params: { id },
   } = context;
-  let responce = await fetch(
-    `https://dull-puce-quail-veil.cyclic.app/ssc/${id}`
-  );
+  let responce = await fetch(`https://vast-cow-kilt.cyclic.app/ssc/${id}`);
   let data = await responce.json();
 
   return {
