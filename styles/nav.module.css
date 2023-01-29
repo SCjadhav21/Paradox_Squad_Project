@@ -1,9 +1,10 @@
 .ulcss {
   width: 100%;
-  position: sticky;
-  top: 0;
-  margin-bottom: 20px;
-  z-index: 10;
+
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+    z-index: 10;
 }
 
 @media screen and (max-width: 700px) {
