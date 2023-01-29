@@ -1,11 +1,10 @@
 import React from "react";
-import { useRouter } from "next/dist/client/router";
+
 import Head from "next/head";
 
 import { Box, Heading, Image, Text, Button, Center } from "@chakra-ui/react";
 
 const video = ({ video }) => {
-  const router = useRouter();
   console.log(video, video.src);
 
   return (
@@ -18,7 +17,9 @@ const video = ({ video }) => {
 
       <main>
         <Box>
-          <Button onClick={() => router.back()}>Go back</Button>
+          <Button>
+            <Link href="/neet">Go back</Link>
+          </Button>
           <div>
             <Center>
               <iframe
