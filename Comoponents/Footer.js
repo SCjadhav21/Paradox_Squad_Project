@@ -58,7 +58,7 @@ export default function Footer() {
     
       bgColor={useColorModeValue('black.50', 'black.900')}
       color={useColorModeValue('white.700', 'white.200')}>
-      <Container as={Stack} maxW="100%" py={10}  bgColor={"black"} color="white" overflowX="hidden" fontWeight={"600px"} fontSize={"20px"}>
+      <Container as={Stack} maxW="100%" py={10}  bgColor={"black"} color="white" overflowX="hidden" fontWeight={"800px"} fontSize={"20px"}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={2}>
           <Stack align={'flex-start'}>
             <ListHeader>Academy</ListHeader>
