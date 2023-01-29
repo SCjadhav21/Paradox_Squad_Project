@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Box, Heading, Button, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-export default function Home({ data }) {
+export default function Home() {
   const [data0, setData0] = useState(
     "https://media.licdn.com/dms/image/C4D12AQHwBqOyC-fVxQ/article-inline_image-shrink_400_744/0/1615895339182?e=1680134400&v=beta&t=3jJ08AWb13vRVPeZfqbvIpzTI-rTQE58F0hGugPCNnY"
   );
@@ -20,7 +20,34 @@ export default function Home({ data }) {
     "https://npr.brightspotcdn.com/dims4/default/9e56499/2147483647/strip/true/crop/900x474+0+0/resize/880x463!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwvxu%2Ffiles%2F201608%2Fexploring_education.jpg",
     "https://media.licdn.com/dms/image/C4D12AQHwBqOyC-fVxQ/article-inline_image-shrink_400_744/0/1615895339182?e=1680134400&v=beta&t=3jJ08AWb13vRVPeZfqbvIpzTI-rTQE58F0hGugPCNnY",
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGVhcm5pbmd8ZW58MHx8MHx8&w=1000&q=80",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr14IVPqc2Gslp04dKkZy7Up9o81TNlHj8Fg&usqp=CAU",
+    "https://th.bing.com/th/id/R.f08d1853e545ebe248d445f2ad870c48?rik=5cMegG1utA2%2fDw&riu=http%3a%2f%2fwww.quotemaster.org%2fimages%2fac%2faca89ddc63eff6c53c19c2a951d8abe6.jpg&ehk=Jj02OuXINN%2fVTrEvSrKVKCSbddtSF6kOIYntcmNl%2fm8%3d&risl=&pid=ImgRaw&r=0",
+  ];
+  const data = [
+    {
+      id: 1,
+      url: "https://cdn.pixabay.com/photo/2020/09/25/10/10/education-5600987__340.png",
+      title: "Online Education with Videos",
+    },
+    {
+      id: 2,
+      url: "https://th.bing.com/th/id/OIP.2m-qrJeAkke0BrwMvU95eQHaFw?pid=ImgDet&rs=1",
+      title: "with lots of categores",
+    },
+    {
+      id: 3,
+      url: "https://www.ecampusnews.com/files/2020/10/online-education.jpg",
+      title: "Full of joy",
+    },
+    {
+      id: 4,
+      url: "https://assets-global.website-files.com/61a05ff14c09ecacc06eec05/61f5868b789816331ac6af01_5_Benefits_of_Online_Education.png",
+      title: "Friendly Environoment",
+    },
+    {
+      id: 5,
+      url: "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/03/24185535/Online-Learning.jpg",
+      title: "well educated staff",
+    },
   ];
 
   // useEffect(() => {
@@ -93,9 +120,6 @@ export default function Home({ data }) {
 
                     <Text align="center" color="black" p="0px 5px">
                       {items.title}
-                    </Text>
-                    <Text align="center" p="0px 5px" pb="5px">
-                      {items.add}
                     </Text>
                   </Box>
                 );
@@ -618,14 +642,4 @@ export default function Home({ data }) {
       </main>
     </>
   );
-}
-export async function getServerSideProps() {
-  let responce = await fetch("https://reduxapi.onrender.com/moments");
-  let data = await responce.json();
-  console.log(data);
-  return {
-    props: {
-      data: data,
-    },
-  };
 }
