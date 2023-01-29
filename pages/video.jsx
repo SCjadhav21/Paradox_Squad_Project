@@ -4,15 +4,15 @@ import Head from "next/head";
 
 import { Box, Heading, Image, Text, Button } from "@chakra-ui/react";
 
-const Page = ({ videoLink }) => {
+const video = () => {
   const router = useRouter();
-  console.log(movie);
+  // console.log(video);
 
   return (
     <>
       <Head>
         <title>movie</title>
-        <meta title="description" content="videoLink,react,js" />
+        <meta title="description" content="video,react,js" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -27,7 +27,7 @@ const Page = ({ videoLink }) => {
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowfullscreen="true"
             ></iframe>
           </div>
         </Box>
@@ -35,26 +35,36 @@ const Page = ({ videoLink }) => {
     </>
   );
 };
+// export async function getStaticPaths(){
+//   let responce = await fetch("http://localhost:8080/movies")
+//   let data = await responce.json()
+//   return{
+//     paths:data.map((el)=>({
+//       params:{id:el.id.toString()}
+//     })),
+//     fallback:false
+//   }
+// }
 
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { id: "1" } }, { params: { id: "2" } }],
-    fallback: false, // can also be true or 'blocking'
-  };
-}
+// export async function getStaticProps(context){
+// const {params:{id}} = context
+//   let responce = await fetch(`http://localhost:8080/movies/${id}`)
+//   let data = await responce.json()
 
-export async function getStaticProps(context) {
-  const {
-    params: { videoLink },
-  } = context;
+//   return {
+//     props: {
+//       video: data,
+//     },
+//   };
+// }
 
-  let data = await videoLink;
+// export async function getStaticProps(context) {
+//   const {
+//     params: { videoLink },
+//   } = context;
 
-  return {
-    props: {
-      videoLink: data,
-    },
-  };
-}
+//   let data = await videoLink;
 
-export default Page;
+// }
+
+export default video;
