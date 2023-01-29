@@ -1,0 +1,55 @@
+
+.ulcss{
+  width: 100%;
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+
+}
+
+@media screen and (max-width: 700px){
+    .ulcss{
+        position: sticky;
+        top: 0;
+        width: 100%;
+       
+    }
+   
+    .ulcss ul{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-align: center;
+        align-items: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+}
+.ulcss ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ 
+  
+  background-color:indigo;
+}
+
+.ulcss li {
+  float:left;
+  font-size: 20px;
+}
+
+.ulcss li a {
+  display: block;
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.ulcss li a:hover:not(.active) {
+  background-color: #111;
+}
