@@ -9,19 +9,11 @@ import { Box, Heading, Button, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Home() {
+  const [change, setChange] = useState(false);
   const [data0, setData0] = useState(
     "https://media.licdn.com/dms/image/C4D12AQHwBqOyC-fVxQ/article-inline_image-shrink_400_744/0/1615895339182?e=1680134400&v=beta&t=3jJ08AWb13vRVPeZfqbvIpzTI-rTQE58F0hGugPCNnY"
   );
-  let datasroll = [
-    "https://thumbs.dreamstime.com/b/education-study-books-high-school-university-16383080.jpg",
-    "https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?cs=srgb&dl=pexels-pixabay-301926.jpg&fm=jpg",
-    "https://www.98thpercentile.com/hubfs/Imported_Blog_Media/Why-is-education-important-Nov-17-2021-11-31-03-28-AM.jpg",
-    "https://media.istockphoto.com/id/1358014313/photo/group-of-elementary-students-having-computer-class-with-their-teacher-in-the-classroom.jpg?b=1&s=170667a&w=0&k=20&c=_UfKmwUAFyylJkXm75hsnM9bPRajhoK_RT5t6VWMovo=",
-    "https://npr.brightspotcdn.com/dims4/default/9e56499/2147483647/strip/true/crop/900x474+0+0/resize/880x463!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwvxu%2Ffiles%2F201608%2Fexploring_education.jpg",
-    "https://media.licdn.com/dms/image/C4D12AQHwBqOyC-fVxQ/article-inline_image-shrink_400_744/0/1615895339182?e=1680134400&v=beta&t=3jJ08AWb13vRVPeZfqbvIpzTI-rTQE58F0hGugPCNnY",
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGVhcm5pbmd8ZW58MHx8MHx8&w=1000&q=80",
-    "https://th.bing.com/th/id/R.f08d1853e545ebe248d445f2ad870c48?rik=5cMegG1utA2%2fDw&riu=http%3a%2f%2fwww.quotemaster.org%2fimages%2fac%2faca89ddc63eff6c53c19c2a951d8abe6.jpg&ehk=Jj02OuXINN%2fVTrEvSrKVKCSbddtSF6kOIYntcmNl%2fm8%3d&risl=&pid=ImgRaw&r=0",
-  ];
+
   const data = [
     {
       id: 1,
@@ -49,27 +41,30 @@ export default function Home() {
       title: "well educated staff",
     },
   ];
+  let datasroll = [
+    "https://thumbs.dreamstime.com/b/education-study-books-high-school-university-16383080.jpg",
+    "https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?cs=srgb&dl=pexels-pixabay-301926.jpg&fm=jpg",
+    "https://www.98thpercentile.com/hubfs/Imported_Blog_Media/Why-is-education-important-Nov-17-2021-11-31-03-28-AM.jpg",
+    "https://media.istockphoto.com/id/1358014313/photo/group-of-elementary-students-having-computer-class-with-their-teacher-in-the-classroom.jpg?b=1&s=170667a&w=0&k=20&c=_UfKmwUAFyylJkXm75hsnM9bPRajhoK_RT5t6VWMovo=",
+    "https://npr.brightspotcdn.com/dims4/default/9e56499/2147483647/strip/true/crop/900x474+0+0/resize/880x463!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwvxu%2Ffiles%2F201608%2Fexploring_education.jpg",
+    "https://media.licdn.com/dms/image/C4D12AQHwBqOyC-fVxQ/article-inline_image-shrink_400_744/0/1615895339182?e=1680134400&v=beta&t=3jJ08AWb13vRVPeZfqbvIpzTI-rTQE58F0hGugPCNnY",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGVhcm5pbmd8ZW58MHx8MHx8&w=1000&q=80",
+    "https://th.bing.com/th/id/R.f08d1853e545ebe248d445f2ad870c48?rik=5cMegG1utA2%2fDw&riu=http%3a%2f%2fwww.quotemaster.org%2fimages%2fac%2faca89ddc63eff6c53c19c2a951d8abe6.jpg&ehk=Jj02OuXINN%2fVTrEvSrKVKCSbddtSF6kOIYntcmNl%2fm8%3d&risl=&pid=ImgRaw&r=0",
+  ];
+  let a = -1;
+  let id = setInterval(() => {
+    if (a === 7) {
+      a = 0;
+    } else {
+      a = a + 1;
+    }
 
+    setData0(datasroll[a]);
+  }, 3000);
   // useEffect(() => {
-  //   const getData = async () => {
-  //     let res = await axios.get("");
-  //     console.log(res);
-  //     setData(res.data);
-  //   };
-  //   getData();
-  // }, []);
-  useEffect(() => {
-    let a = -1;
-    setInterval(() => {
-      if (a === 7) {
-        a = 0;
-      } else {
-        a = a + 1;
-      }
-
-      setData0(datasroll[a]);
-    }, 3000);
-  }, []);
+  //   clearInterval(id)
+  //   setInterval();
+  // }, [change]);
   return (
     <>
       <Head>
@@ -596,7 +591,7 @@ export default function Home() {
               note taking. Studies have shown that students improve
               significantly in courses with online archived lectures,[1]
               especially international students.[2] Studies have also noted that
-              students' overall experience of a course has improved with the
+              students overall experience of a course has improved with the
               addition of online lectures.[1] Online lecture may also one of the
               solutions in equalizing education for students. There are also
               disadvantages to online lecturing, namely the lack of face-to-face
