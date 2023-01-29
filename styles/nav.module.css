@@ -46,6 +46,6 @@
   text-decoration: none;
 }
 
-.ulcss li a:hover:not(.active) {
+/* .ulcss li a:hover:not(.active) {
   background-color: #111;
-}
+} */
